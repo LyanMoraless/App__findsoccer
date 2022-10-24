@@ -16,25 +16,27 @@ export default function Login() {
             <View style={styles.titulo}>
                 <Text style={styles.textoTitulo}>FintSoccer</Text>
             </View>
-            <View style={styles.login}>
-                <Text style={styles.textoLogin}>Login</Text>
-            </View>
-            <View style={styles.form}>
-                <Text style={styles.textoInput}>Email ou Usuário</Text>
-                <TextInput style={[styles.Input, styles.shadowProp]} value={del1} onChangeText={setDel1}/>
-                <Text style={styles.textoInput}>Senha</Text>
-                <TextInput style={[styles.Input, styles.shadowProp]} secureTextEntry={true} value={del2} onChangeText={setDel2}/>
-            </View>
-            <View style={styles.botao}>
-                <TouchableOpacity style={styles.enviarInput}>
-                    <Text style={styles.textoBotao} onPress={() => deleta()}>Enviar</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.botao}>
-                <Text style={styles.conta}>Não possuir uma conta?</Text>
-                <TouchableOpacity>
-                    <Text style={styles.registra}>Registre-se</Text>
-                </TouchableOpacity>
+            <View style={styles.card}>
+                <View style={styles.login}>
+                    <Text style={styles.textoLogin}>Login</Text>
+                </View>
+                <View style={styles.form}>
+                    <Text style={styles.textoInput}>Email ou Usuário</Text>
+                    <TextInput style={[styles.Input, styles.shadowProp]} value={del1} onChangeText={setDel1} />
+                    <Text style={styles.textoInput}>Senha</Text>
+                    <TextInput style={[styles.Input, styles.shadowProp]} secureTextEntry={true} value={del2} onChangeText={setDel2} />
+                </View>
+                <View style={styles.botao}>
+                    <TouchableOpacity style={styles.enviarInput}>
+                        <Text style={styles.textoBotao} onPress={() => deleta()}>Enviar</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.botao}>
+                    <Text style={styles.conta}>Não possuir uma conta?</Text>
+                    <TouchableOpacity>
+                        <Text style={styles.registra}>Registre-se</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         </View>
     )
@@ -43,7 +45,6 @@ export default function Login() {
 const styles = StyleSheet.create({
 
     container: {
-        backgroundColor: '#fff'
 
     },
     titulo: {
@@ -64,7 +65,16 @@ const styles = StyleSheet.create({
     },
     textoLogin: {
         fontSize: 40,
-        textAlign: 'center'
+        textAlign: 'center',
+        color: '#00D431'
+    },
+    card: {
+        backgroundColor: '#fff',
+        paddingTop: 40,
+        marginRight: 5,
+        marginLeft: 5,
+        paddingBottom: 40,
+        borderRadius: 10
     },
     form: {
         marginTop: 10,
@@ -91,7 +101,7 @@ const styles = StyleSheet.create({
         left: 80
 
     },
-    shadowProp:{
+    shadowProp: {
         shadowColor: '#23FA00',
         shadowOffset: { width: 7, height: 9 },
         shadowOpacity: 0.2,
@@ -119,7 +129,7 @@ const styles = StyleSheet.create({
     },
     registra: {
         fontSize: 20,
-        color:'#00D431'
+        color: '#00D431'
     }
 
 
