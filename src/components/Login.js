@@ -1,34 +1,42 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, TextInput, TouchableOpacity, View, Text } from "react-native";
+import { AuthContext } from "../contexts/Auth";
 
 export default function Login() {
+    
+    const navigation = useNavigation()
 
-    const [del1, setDel1] = React.useState('')
-    const [del2, setDel2] = React.useState('')
+    const [email, setEmail] = React.useState("nome@gmail.com");
+    const [password, setPassword] = React.useState("senha");
 
-    const deleta = () => {
-        setDel1('')
-        setDel2('')
+    const { login } = React.useContext(AuthContext);
+
+    const loginHandle = () => {
+        login(email, password);
+        navigation.navigate("Principal");
     }
 
-    return (
+   return (
         <View style={styles.container}>
             <View style={styles.titulo}>
                 <Text style={styles.textoTitulo}>FintSoccer</Text>
             </View>
+
             <View style={styles.card}>
                 <View style={styles.login}>
                     <Text style={styles.textoLogin}>Login</Text>
                 </View>
+                
                 <View style={styles.form}>
                     <Text style={styles.textoInput}>Email ou Usuário</Text>
-                    <TextInput style={[styles.Input, styles.shadowProp]} value={del1} onChangeText={setDel1} />
+                    <TextInput style={[styles.Input, styles.shadowProp]} value={email} onChangeText={setEmail} />
                     <Text style={styles.textoInput}>Senha</Text>
-                    <TextInput style={[styles.Input, styles.shadowProp]} secureTextEntry={true} value={del2} onChangeText={setDel2} />
+                    <TextInput style={[styles.Input, styles.shadowProp]} secureTextEntry={password} value={password} onChangeText={setPassword} />
                 </View>
                 <View style={styles.botao}>
                     <TouchableOpacity style={styles.enviarInput}>
-                        <Text style={styles.textoBotao} onPress={() => deleta()}>Enviar</Text>
+                        <Text style={styles.textoBotao} onPress={() => loginHandle()}>Enviar</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.botao}>
@@ -131,6 +139,4 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#00D431'
     }
-
-
 })
