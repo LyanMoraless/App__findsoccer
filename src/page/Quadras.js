@@ -16,22 +16,22 @@ export default function Quadras() {
   return (
     <View style={styles.container}>
 
-    <View style={styles.header}>
-      <Text style={styles.txt}>Lista das Quadras</Text>
-      <View style={styles.row}></View>
-    </View>
+      <View style={styles.header}>
+        <Text style={styles.txt}>Lista das Quadras</Text>
+        <View style={styles.row}></View>
+      </View>
 
-      {quadras.map((quadra) => (
-          <View style={styles.body}>
-            <Card.Title
-              style={styles.card}
-              title={quadra.nome}
-              subtitle={quadra.descricao}
-              left={(props) => <Entypo name="trophy" size={24} color="black" /> }
-              // right={(props) => <IconButton {...props} icon="more-vert" onPress={() => { }} />}
-            />
-        </View>
-      ))}
+      <View style={styles.body}>
+        {quadras.map((quadra) => (
+          <Card.Title
+            style={styles.card}
+            title={quadra.nome}
+            subtitle={quadra.descricao}
+            left={(props) => <Entypo name="trophy" size={24} color="black" />}
+          // right={(props) => <IconButton {...props} icon="more-vert" onPress={() => { }} />}
+          />
+        ))}
+      </View>
     </View>
   )
 }
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: '#FFFFFF',
     borderRadius: 10,
-    margin: 5
+    marginTop: 7
   },
   header: {
     height: '10%'
