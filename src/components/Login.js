@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
@@ -10,6 +11,8 @@ export default function Login() {
         setDel1('')
         setDel2('')
     }
+
+    const navigation = useNavigation();
 
     return (
         <View style={styles.container}>
@@ -26,10 +29,17 @@ export default function Login() {
                     <Text style={styles.textoInput}>Senha</Text>
                     <TextInput style={[styles.Input, styles.shadowProp]} secureTextEntry={true} value={del2} onChangeText={setDel2} />
                 </View>
-                <View style={styles.botao}>
-                    <TouchableOpacity style={styles.enviarInput}>
-                        <Text style={styles.textoBotao} onPress={() => deleta()}>Enviar</Text>
-                    </TouchableOpacity>
+                <View style={styles.buttons}>
+                    <View style={styles.btnString}>
+                        <TouchableOpacity onPress={() => navigation.navigate('OverView') }>
+                            <Text style={styles.textoBotao}>Enviar</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.btnString}>
+                        <TouchableOpacity onPress={() => deleta()}>
+                            <Text style={styles.textoBotao}>Limpar</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
                 <View style={styles.botao}>
                     <Text style={styles.conta}>Não possuir uma conta?</Text>
@@ -107,22 +117,18 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.2,
         shadowRadius: 3,
     },
-    botao: {
+    buttons: {
         alignItems: 'center',
-        paddingTop: 8
-    },
-    enviarInput: {
-        borderWidth: 1,
-        height: 50,
-        width: '90%',
-        borderRadius: 9,
-        marginBottom: 10
+        flexDirection: 'row',
+        justifyContent: 'space-around'
     },
     textoBotao: {
         textAlign: 'center',
-        paddingTop: 1,
         fontSize: 30,
-        color: '#00D431'
+        color: '#00D431',
+        borderWidth: 1,
+        borderRadius: 10,
+        padding: 10
     },
     conta: {
         fontSize: 20,
@@ -130,7 +136,8 @@ const styles = StyleSheet.create({
     registra: {
         fontSize: 20,
         color: '#00D431'
+    },
+    btnString: {
+        width: '50%'
     }
-
-
 })
