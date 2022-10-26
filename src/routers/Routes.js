@@ -16,7 +16,7 @@ export default function Routes() {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="OverView" component={() =>
-                <Tab.Navigator initialRouteName='Quadras' screenOptions={({ route }) => ({
+                <Tab.Navigator initialRouteName='Home' screenOptions={({ route }) => ({
                     tabBarIcon: ({ color, size }) => {
                         let iconName;
 
