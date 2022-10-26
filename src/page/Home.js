@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 import { Avatar, Card, IconButton } from "react-native-paper";
 
 import { Entypo } from '@expo/vector-icons';
@@ -43,6 +43,7 @@ export default function Home() {
             left={(props) => <Entypo name="trophy" size={24} color="black" />}
           />
         </View>
+      
       </View>
     </View>
   )

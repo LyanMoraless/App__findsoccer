@@ -48,7 +48,7 @@ export default function Routes() {
                         })}>
                             <Tab.Screen name='Quadras' component={Quadras} options={{ headerShown: false }} />
                             <Tab.Screen name='Home' component={Home} options={{ headerShown: false }} />
-                            {/* <Tab.Screen name='Locais' component={Locais} options={{ headerShown: false }} /> */}
+                            <Tab.Screen name='Usuario' component={Locais} options={{ headerShown: false }} />
                         </Tab.Navigator>
                     } />
                 </>
