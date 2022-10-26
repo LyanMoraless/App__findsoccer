@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Login from "../page/LoginPage"
 import { AuthContext } from "../contexts/Auth";
 import { AntDesign } from '@expo/vector-icons'
 
