@@ -29,14 +29,14 @@ export default function Routes() {
                                 switch (route.name) {
                                     case 'Home':
                                         iconName = 'home';
-                                        size = 35
+                                        size = 26
                                         break;
                                     case 'Quadras':
                                         iconName = 'dribbble';
                                         size = 20
                                         break;
-                                    case 'Locais':
-                                        iconName = 'enviromento';
+                                    case 'Usuario':
+                                        iconName = 'user';
                                         size = 20
                                         break;
                                 }
@@ -48,7 +48,7 @@ export default function Routes() {
                         })}>
                             <Tab.Screen name='Quadras' component={Quadras} options={{ headerShown: false }} />
                             <Tab.Screen name='Home' component={Home} options={{ headerShown: false }} />
-                            <Tab.Screen name='Locais' component={Locais} options={{ headerShown: false }} />
+                            {/* <Tab.Screen name='Locais' component={Locais} options={{ headerShown: false }} /> */}
                         </Tab.Navigator>
                     } />
                 </>
