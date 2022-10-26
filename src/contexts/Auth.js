@@ -7,12 +7,20 @@ export const AuthProvider = ({children}) => {
 
     const [user, setUser] = React.useState(null)
 
-    const login = (email, password) => {
+    const login = async (email, password) => {
         if (email == "nome@gmail.com" && password == "senha") {
-            setUser({
+            const user = {
                 email: "nome@gmail.com",
                 name: "joao"
-            })
+            };
+            setUser(user);
+            try {
+                await AsyncStorage.setItem('user', JSON.
+                stringify(user));
+            }
+            catch (err) {
+                console.log(err);
+            }
         }
         else {
             setUser(null);

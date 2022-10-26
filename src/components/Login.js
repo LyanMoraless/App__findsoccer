@@ -12,9 +12,12 @@ export default function Login() {
 
     const { login } = React.useContext(AuthContext);
 
-    const loginHandle = () => {
-        login(email, password);
-        navigation.navigate("Principal");
+    const loginHandle = async () => {
+        try{await login(email, password);
+            navigation.navigate("Principal");}
+            catch (err){
+                console.log(err)
+            }
     }
 
    return (
