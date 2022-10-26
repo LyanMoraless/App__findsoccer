@@ -118,22 +118,18 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.2,
         shadowRadius: 3,
     },
-    botao: {
+    buttons: {
         alignItems: 'center',
-        paddingTop: 8
-    },
-    enviarInput: {
-        borderWidth: 1,
-        height: 50,
-        width: '90%',
-        borderRadius: 9,
-        marginBottom: 10
+        flexDirection: 'row',
+        justifyContent: 'space-around'
     },
     textoBotao: {
         textAlign: 'center',
-        paddingTop: 1,
         fontSize: 30,
-        color: '#00D431'
+        color: '#00D431',
+        borderWidth: 1,
+        borderRadius: 10,
+        padding: 10
     },
     conta: {
         fontSize: 20,
@@ -141,5 +137,8 @@ const styles = StyleSheet.create({
     registra: {
         fontSize: 20,
         color: '#00D431'
+    },
+    btnString: {
+        width: '50%'
     }
 })

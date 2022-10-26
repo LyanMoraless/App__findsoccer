@@ -2,18 +2,19 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native'
 import { StatusBar } from 'react-native';
 
-import  { AuthProvider, AuthContext } from './src/contexts/Auth';
-
-import Routes from './src/routers/routes';
+import Routes from './src/routers/Routes';
+import { QuadrasProvider } from './src/contexts/Quadras';
+import { AuthProvider } from './src/contexts/Auth';
 
 export default function App() {
   return (
-
     <AuthProvider>
-      <NavigationContainer>
-        <Routes />
-        <StatusBar style="auto" />
-      </NavigationContainer>
+      <QuadrasProvider>
+        <NavigationContainer>
+          <Routes />
+          <StatusBar style="auto" />
+        </NavigationContainer>
+      </QuadrasProvider>
     </AuthProvider>
   );
 }
