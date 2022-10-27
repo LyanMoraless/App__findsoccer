@@ -77,11 +77,12 @@ const styles = StyleSheet.create({
         width: '70%'
     },
     textoLogin: {
+        fontStyle: 'italic',
+        fontWeight: 'bold',
         fontSize: 40,
         textAlign: 'center',
         color: '#00D431',
-        fontStyle: 'italic',
-        fontWeight: 'bold',
+        
     },
     card: {
         backgroundColor: '#fff',
