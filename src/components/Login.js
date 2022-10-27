@@ -4,7 +4,7 @@ import { StyleSheet, TextInput, TouchableOpacity, View, Text } from "react-nativ
 import { AuthContext } from "../contexts/Auth";
 
 export default function Login() {
-    
+
     const navigation = useNavigation()
 
     const [email, setEmail] = React.useState("nome@gmail.com");
@@ -13,14 +13,16 @@ export default function Login() {
     const { login } = React.useContext(AuthContext);
 
     const loginHandle = async () => {
-        try{await login(email, password);
-            navigation.navigate("Principal");}
-            catch (err){
-                console.log(err)
-            }
+        try {
+            await login(email, password);
+            navigation.navigate("Principal");
+        }
+        catch (err) {
+            console.log(err)
+        }
     }
 
-   return (
+    return (
         <View style={styles.container}>
             <View style={styles.titulo}>
                 <Text style={styles.textoTitulo}>FintSoccer</Text>
@@ -30,7 +32,7 @@ export default function Login() {
                 <View style={styles.login}>
                     <Text style={styles.textoLogin}>Login</Text>
                 </View>
-                
+
                 <View style={styles.form}>
                     <Text style={styles.textoInput}>Email ou Usuário</Text>
                     <TextInput style={[styles.Input, styles.shadowProp]} value={email} onChangeText={setEmail} />
@@ -42,7 +44,7 @@ export default function Login() {
                         <Text style={styles.textoBotao} onPress={() => loginHandle()}>Enviar</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.botao}>
+                <View style={styles.registraCard}>
                     <Text style={styles.conta}>Não possuir uma conta?</Text>
                     <TouchableOpacity>
                         <Text style={styles.registra}>Registre-se</Text>
@@ -77,7 +79,9 @@ const styles = StyleSheet.create({
     textoLogin: {
         fontSize: 40,
         textAlign: 'center',
-        color: '#00D431'
+        color: '#00D431',
+        fontStyle: 'italic',
+        fontWeight: 'bold',
     },
     card: {
         backgroundColor: '#fff',
@@ -105,6 +109,8 @@ const styles = StyleSheet.create({
         borderRadius: 6
     },
     textoInput: {
+        fontStyle: 'italic',
+        fontWeight: 'bold',
         paddingTop: 8,
         paddingLeft: 25,
         paddingBottom: 8,
@@ -118,27 +124,36 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.2,
         shadowRadius: 3,
     },
-    buttons: {
-        alignItems: 'center',
-        flexDirection: 'row',
-        justifyContent: 'space-around'
+    botao: {
+        height: 50,
+        width: '90%',
+        marginTop: 10,
+        borderWidth: 1,
+        borderColor: '#000000',
+        borderRadius: 11,
+        alignSelf: 'center'
     },
     textoBotao: {
         textAlign: 'center',
         fontSize: 30,
         color: '#00D431',
-        borderWidth: 1,
-        borderRadius: 10,
-        padding: 10
+        paddingTop: 3,
+        fontStyle: 'italic',
+        fontWeight: 'bold',
+    },
+    registraCard: {
+        alignItems: 'center'
+
     },
     conta: {
         fontSize: 20,
+        fontStyle: 'italic',
+        fontWeight: 'bold',
     },
     registra: {
         fontSize: 20,
-        color: '#00D431'
+        color: '#00D431',
+        fontStyle: 'italic',
+        fontWeight: 'bold',
     },
-    btnString: {
-        width: '50%'
-    }
 })
