@@ -24,31 +24,30 @@ export default function Login() {
 
     return (
         <View style={styles.container}>
-            <View style={styles.titulo}>
-                <Text style={styles.textoTitulo}>FintSoccer</Text>
+            <View style={styles.header}>
+                <Text style={styles.textoTitulo}>FindSoccer</Text>
             </View>
 
-            <View style={styles.card}>
-                <View style={styles.login}>
+            <View style={styles.body}>
+                <View style={styles.card}>
                     <Text style={styles.textoLogin}>Login</Text>
-                </View>
 
-                <View style={styles.form}>
                     <Text style={styles.textoInput}>Email ou Usuário</Text>
-                    <TextInput style={[styles.Input, styles.shadowProp]} value={email} onChangeText={setEmail} />
+                    <TextInput style={[styles.input, styles.shadowProp]} value={email} onChangeText={setEmail} />
                     <Text style={styles.textoInput}>Senha</Text>
-                    <TextInput style={[styles.Input, styles.shadowProp]} secureTextEntry={password} value={password} onChangeText={setPassword} />
-                </View>
-                <View style={styles.botao}>
-                    <TouchableOpacity style={styles.enviarInput}>
-                        <Text style={styles.textoBotao} onPress={() => loginHandle()}>Enviar</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.registraCard}>
-                    <Text style={styles.conta}>Não possuir uma conta?</Text>
-                    <TouchableOpacity>
-                        <Text style={styles.registra}>Registre-se</Text>
-                    </TouchableOpacity>
+                    <TextInput style={[styles.input, styles.shadowProp]} secureTextEntry={true} value={password} onChangeText={setPassword} />
+
+                    <View style={styles.botao}>
+                        <TouchableOpacity style={styles.enviarInput}>
+                            <Text style={styles.textoBotao} onPress={() => loginHandle()}>Enviar</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.registraCard}>
+                        <Text style={styles.conta}>Não possui uma conta?</Text>
+                        <TouchableOpacity>
+                            <Text style={styles.registra}>Registre-se</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </View>
         </View>
@@ -58,49 +57,41 @@ export default function Login() {
 const styles = StyleSheet.create({
 
     container: {
-
+        flex: 1,
     },
-    titulo: {
-        textAlign: "center",
-        padding: 10,
-        fontSize: 20,
+    header: {
+        height: '20%',
+    },
+    body: {
+        height: '80%'
     },
     textoTitulo: {
-        fontSize: 80,
-        color: '#0FFA1F'
-    },
-    login: {
-        alignSelf: "center",
-        borderWidth: 1,
-        borderRadius: 28,
-        height: 60,
-        width: '70%'
+        fontSize: 70,
+        color: '#0FFA1F',
+        justifyContent: 'center',
+        textAlign: "center",
+        fontWeight: 'bold',
     },
     textoLogin: {
         fontStyle: 'italic',
-        fontWeight: 'bold',
         fontSize: 40,
         textAlign: 'center',
         color: '#00D431',
-        
+        marginBottom: 30
     },
     card: {
+        flex: 1,
         backgroundColor: '#fff',
-        paddingTop: 40,
-        marginRight: 5,
-        marginLeft: 5,
-        paddingBottom: 40,
+        padding: 20,
+        marginRight: 15,
+        marginLeft: 15,
         borderRadius: 10
     },
-    form: {
-        marginTop: 10,
-        marginBottom: 10
-    },
-    Input: {
+    input: {
         alignSelf: 'center',
-        fontSize: 20,
+        fontSize: 15,
         marginBottom: 1,
-        width: '90%',
+        width: '100%',
         fontWeight: 1,
         padding: 10,
         color: '#FFFFF',
@@ -113,11 +104,7 @@ const styles = StyleSheet.create({
         fontStyle: 'italic',
         fontWeight: 'bold',
         paddingTop: 8,
-        paddingLeft: 25,
-        paddingBottom: 8,
         fontSize: 20,
-        left: 80
-
     },
     shadowProp: {
         shadowColor: '#23FA00',
@@ -127,7 +114,7 @@ const styles = StyleSheet.create({
     },
     botao: {
         height: 50,
-        width: '90%',
+        width: '100%',
         marginTop: 10,
         borderWidth: 1,
         borderColor: '#000000',
@@ -140,11 +127,10 @@ const styles = StyleSheet.create({
         color: '#00D431',
         paddingTop: 3,
         fontStyle: 'italic',
-        fontWeight: 'bold',
     },
     registraCard: {
-        alignItems: 'center'
-
+        alignItems: 'center',
+        flexDirection: 'row'
     },
     conta: {
         fontSize: 20,

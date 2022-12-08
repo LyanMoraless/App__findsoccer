@@ -73,16 +73,17 @@ const styles = StyleSheet.create({
     margin: 20
   },
   txt: {
-    color: '#90ee90',
-    fontStyle: 'italic'
+    color: 'green',
+    fontStyle: 'italic',
+    fontWeight: 'bold'
   },
   paragraph: {
     marginTop: 15,
     marginLeft: 20,
     textAlign: 'justify',
     borderRadius: 20,
-    backgroundColor: 'gray',
-    color: '#FFFFFF',
+    backgroundColor: '#E5E4E2',
+    color: 'black',
     padding: 10,
     position: 'relative',
     borderTopLeftRadius: 0
@@ -92,11 +93,11 @@ const styles = StyleSheet.create({
     margin: 20
   },
   card: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E5E4E2',
     borderRadius: 10,
-    shadowColor: '#171717',
+    shadowColor: 'black',
     shadowOffset: { width: -5, height: 6 },
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.5,
     shadowRadius: 2,
   }
 });
