@@ -104,7 +104,8 @@ const styles = StyleSheet.create({
         fontStyle: 'italic',
         fontWeight: 'bold',
         paddingTop: 8,
-        fontSize: 20,
+        fontSize: 20, 
+        marginBottom: 5
     },
     shadowProp: {
         shadowColor: '#23FA00',
@@ -142,5 +143,6 @@ const styles = StyleSheet.create({
         color: '#00D431',
         fontStyle: 'italic',
         fontWeight: 'bold',
+        marginLeft: 3
     },
 })
