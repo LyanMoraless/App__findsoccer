@@ -24,21 +24,21 @@ export default function Home() {
       <View style={styles.body}>
         <View>
           <Card.Title
-            style={styles.card}
+            style={[styles.card, styles.shadowProps]}
             title="Maiores Avaliações"
             left={(props) => <Entypo name="trophy" size={24} color="black" />}
           />
         </View>
         <View style={{ marginTop: 15 }}>
           <Card.Title
-            style={styles.card}
+            style={[styles.card, styles.shadowProps]}
             title="Estourando na Semana"
             left={(props) => <Entypo name="trophy" size={24} color="black" />}
           />
         </View>
         <View style={{ marginTop: 15 }}>
           <Card.Title
-            style={styles.card}
+            style={[styles.card, styles.shadowProps]}
             title="Mais próximas a você"
             left={(props) => <Entypo name="trophy" size={24} color="black" />}
           />
@@ -95,9 +95,11 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: '#E5E4E2',
     borderRadius: 10,
+  },
+  shadowProps: {
     shadowColor: 'black',
-    shadowOffset: { width: -5, height: 6 },
-    shadowOpacity: 0.5,
-    shadowRadius: 2,
+    shadowOffset: { width: -2, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
   }
 });
