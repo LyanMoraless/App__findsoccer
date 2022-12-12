@@ -12,7 +12,7 @@ export default function Home() {
           <Text style={styles.titleTxt}>Find Soccer</Text>
           <View style={styles.rowStyle}></View>
           {/*BOTÃO SAIR */}
-          <View style={{position: 'absolute', left: 278}}>
+          <View style={{position: 'absolute', left: 288}}>
           <TouchableOpacity style={styles.botaoSair}>
             <Text style={styles.textoSair}>Sair</Text>
           </TouchableOpacity>
