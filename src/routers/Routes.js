@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { TouchableOpacity, StyleSheet, Text } from 'react-native'
 
 import { AuthContext } from "../contexts/Auth";
 import { AntDesign } from '@expo/vector-icons'
@@ -21,7 +22,15 @@ export default function Routes() {
         <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Login">
             {authorized ? (
                 <>
-                    <Stack.Screen name="OverView" component={() =>
+                    <Stack.Screen options={{
+                        headerRight: () => (
+                            <TouchableOpacity
+                                style={styles.botao}
+                            >
+                                <Text style={styles.texto}>Sair</Text>
+                            </TouchableOpacity>
+                        )
+                    }} name="OverView" component={() =>
                         <Tab.Navigator initialRouteName='Home' screenOptions={({ route }) => ({
                             tabBarIcon: ({ color, size }) => {
                                 let iconName;
@@ -60,3 +69,11 @@ export default function Routes() {
         </Stack.Navigator>
     )
 }
+
+const styles = StyleSheet.create({
+    botao: {
+        borderRadius: 5,
+        padding: 5,
+        backgroundColor: 'green',
+    },
+})

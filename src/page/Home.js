@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Avatar, Card, IconButton } from "react-native-paper";
 
 import { Entypo } from '@expo/vector-icons';
@@ -8,9 +8,17 @@ export default function Home() {
     <View style={styles.container}>
       <View style={styles.header}>
         {/* PRIMEIRO CABEÇALHO */}
-        <View>
+        <View style={{flexDirection: 'row'}}>
           <Text style={styles.titleTxt}>Find Soccer</Text>
           <View style={styles.rowStyle}></View>
+          {/*BOTÃO SAIR */}
+          <View style={{position: 'absolute', left: 278}}>
+          <TouchableOpacity style={styles.botaoSair}>
+            <Text style={styles.textoSair}>Sair</Text>
+          </TouchableOpacity>
+           {/*BOTÃO SAIR */}
+
+          </View>
         </View>
         {/* ------------------------------------------------------ */}
         {/* SEGUNDO CABEÇALHO */}
@@ -59,6 +67,19 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     fontWeight: 'bold'
   },
+  botaoSair: {
+    backgroundColor: '#3FC700',
+    paddingTop: 9,
+    paddingStart: 20,
+    paddingBottom: 9,
+    paddingEnd: 20,
+    borderRadius: 10
+  },
+  textoSair: {
+    color: '#000000',
+    fontSize: 16,
+    fontWeight: 'bold'
+  },
   header: {
     margin: 20,
     height: '30%'
@@ -101,5 +122,5 @@ const styles = StyleSheet.create({
     shadowOffset: { width: -2, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
-  }
+  },
 });
