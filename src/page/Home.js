@@ -2,24 +2,29 @@ import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Avatar, Card, IconButton } from "react-native-paper";
 
 import { Entypo } from '@expo/vector-icons';
+import { AuthContext } from "../contexts/Auth";
+import { useContext } from "react";
 
 export default function Home() {
+
+  const { logout } = useContext(AuthContext)
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         {/* PRIMEIRO CABEÇALHO */}
-        <View style={{flexDirection: 'row'}}>
-          <Text style={styles.titleTxt}>Find Soccer</Text>
-          <View style={styles.rowStyle}></View>
-          {/*BOTÃO SAIR */}
-          <View style={{position: 'absolute', left: 288}}>
-          <TouchableOpacity style={styles.botaoSair}>
+        <View style={{ width: '75%' }}>
+        <Text style={styles.titleTxt}>Find Soccer</Text>
+        <View style={styles.rowStyle}></View>
+        </View>
+        
+        {/*BOTÃO SAIR */}
+        <View style={{ position: 'absolute', left: 288 }}>
+          <TouchableOpacity onPress={() => logout()} style={styles.botaoSair}>
             <Text style={styles.textoSair}>Sair</Text>
           </TouchableOpacity>
-           {/*BOTÃO SAIR */}
-
-          </View>
         </View>
+        
         {/* ------------------------------------------------------ */}
         {/* SEGUNDO CABEÇALHO */}
         <View>
@@ -51,7 +56,7 @@ export default function Home() {
             left={(props) => <Entypo name="trophy" size={24} color="black" />}
           />
         </View>
-      
+
       </View>
     </View>
   )
@@ -85,10 +90,11 @@ const styles = StyleSheet.create({
     height: '30%'
   },
   rowStyle: {
-    marginTop: 2,
+    marginTop: 6,
     borderWidth: 1,
     backgroundColor: '#000000',
-    borderRadius: 10
+    borderTopEndRadius: 10,
+    borderBottomEndRadius: 10
   },
   body: {
     margin: 20

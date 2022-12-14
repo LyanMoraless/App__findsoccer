@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { QuadrasContext } from "../contexts/Quadras";
-import { Avatar, Card, IconButton } from 'react-native-paper';
+import { Card } from 'react-native-paper';
 
 import { Entypo } from '@expo/vector-icons';
 
@@ -23,7 +23,7 @@ export default function Quadras() {
 
       <View style={styles.body}>
         {quadras.map((quadra) => (
-          <Card.Title
+          <Card.Title key={quadra.id}
             style={styles.card}
             title={quadra.nome}
             subtitle={quadra.descricao}

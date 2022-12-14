@@ -9,7 +9,7 @@ import { AntDesign } from '@expo/vector-icons'
 import Login from "../page/LoginPage";
 import Home from "../page/Home";
 import Quadras from "../page/Quadras";
-import Locais from "../page/Locais";
+import User from "../page/User";
 
 const Stack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator();
@@ -57,7 +57,7 @@ export default function Routes() {
                         })}>
                             <Tab.Screen name='Quadras' component={Quadras} options={{ headerShown: false }} />
                             <Tab.Screen name='Home' component={Home} options={{ headerShown: false }} />
-                            <Tab.Screen name='Usuario' component={Locais} options={{ headerShown: false }} />
+                            <Tab.Screen name='Usuario' component={User} options={{ headerShown: false }} />
                         </Tab.Navigator>
                     } />
                 </>
