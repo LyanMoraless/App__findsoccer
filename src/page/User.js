@@ -58,6 +58,19 @@ export default function Locais() {
               left={(props) => <Entypo name="trophy" size={24} color="black" />}
             />
           ))}
+
+          <View style={styles.bodyDetails}>
+            <Text style={styles.titleTwo}>Quadras Cadastradas</Text>
+            <Text style={styles.bold}>17</Text>
+          </View>
+          <View style={styles.bodyDetails}>
+            <Text style={styles.titleTwo}>Quadras Acessadas</Text>
+            <Text style={styles.bold}>211</Text>
+          </View>
+          <View style={styles.bodyDetails}>
+            <Text style={styles.titleTwo}>Quadras Avaliadas</Text>
+            <Text style={styles.bold}>142</Text>
+          </View>
         </View>
       </View>
 
@@ -124,5 +137,18 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     borderTopEndRadius: 14,
     borderBottomEndRadius: 14
+  },
+  bodyDetails: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20
+  },
+  titleTwo: {
+    fontSize: 20,
+    fontStyle: 'italic',
+    marginBottom: 4
+  },
+  bold: {
+    fontWeight: 'bold'
   }
 })
